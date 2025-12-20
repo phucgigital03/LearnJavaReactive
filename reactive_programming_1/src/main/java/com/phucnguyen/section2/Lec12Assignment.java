@@ -17,16 +17,16 @@ public class Lec12Assignment {
 
         var fileServiceImpl = new FileServiceImpl();
 
-        fileServiceImpl.readFile("file.txt")
-                        .subscribe(Util.subscriber());
-
         fileServiceImpl.writeFile("file.txt", "This is the file content")
                 .subscribe(Util.subscriber());
 
-        fileServiceImpl.deleteFile("file.txt")
-                .subscribe(Util.subscriber());
+        fileServiceImpl.readFile("file.txt")
+                        .subscribe(Util.subscriber());
 
-        Util.sleepSecondDuration(2);
+//        fileServiceImpl.deleteFile("file.txt")
+//                .subscribe(Util.subscriber());
+
+        Util.sleepSecondDuration(4);
 
     }
 

@@ -12,7 +12,9 @@ public class Lec09PublisherCreateVsExecution {
     public static void main(String[] args) {
 //      Demo 1: It is just create Publisher
 //        getName();
-//      Demo 2: It create publisher and when call .subscribe() execute business inside
+
+
+//      Demo 2: It creates publisher and when call .subscribe() execute business inside
         getName()
                 .subscribe(Util.subscriber());
         log.info("Thread name: {}", Thread.currentThread().getName());
