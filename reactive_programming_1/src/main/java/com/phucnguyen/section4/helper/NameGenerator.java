@@ -21,4 +21,9 @@ public class NameGenerator implements Consumer<FluxSink<String>> {
         log.info("thread name: " + Thread.currentThread().getName());
         this.sink.next(Util.getFaker().name().firstName());
     }
+
+    public void completeSink() {
+        log.info("complete sink");
+        this.sink.complete();
+    }
 }

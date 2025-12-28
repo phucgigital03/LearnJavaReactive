@@ -1,4 +1,4 @@
 package com.phucnguyen.section6.assignment;
 
-public class Order {
+public record Order(String category, Integer price, Integer quantity) {
 }
