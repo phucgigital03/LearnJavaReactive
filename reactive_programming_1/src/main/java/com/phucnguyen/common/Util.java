@@ -17,6 +17,14 @@ public class  Util {
         }
     }
 
+    public static void sleep(Duration duration) {
+        try {
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static Faker getFaker() {
         return faker;
     }
