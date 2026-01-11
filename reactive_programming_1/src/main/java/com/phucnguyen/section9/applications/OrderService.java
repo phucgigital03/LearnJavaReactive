@@ -27,10 +27,10 @@ public class OrderService {
             3, List.of()
     );
 
-//    public static Flux<Order> getUserOrders(Integer userId) {
-//        return Flux.fromIterable(orderTable.get(userId))
-//                   .delayElements(Duration.ofMillis(500))
-//                   .transform(Util.fluxLogger("order-for-user" + userId));
-//    }
+    public static Flux<Order> getUserOrders(Integer userId) {
+        return Flux.fromIterable(orderTable.get(userId))
+                   .delayElements(Duration.ofMillis(1000))
+                   .transform(Util.fluxLogger("order-for-user" + userId));
+    }
 
 }

@@ -1,4 +1,4 @@
 package com.phucnguyen.section9.helper;
 
-public class Flight {
+public record Flight(String airline, Integer price) {
 }
