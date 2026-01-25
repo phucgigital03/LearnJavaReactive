@@ -1,0 +1,22 @@
+
+A. Sink.many
+1. multicast() (The "Live Broadcast")
+Think of this like a Radio Station. If you tune in at 10:00 AM, you hear what is playing now. You cannot hear the song that played at 9:55 AM. If no one is listening, the radio station still plays the music (it is "hot"), but the sound is lost.
+Behavior: Supports multiple subscribers.
+Late Subscribers: They only receive data emitted after they subscribed. They miss everything before.
+Best for: Live stock prices, sensor alerts, mouse clicks.
+
+2. replay() (The "DVR / Recording")
+Think of this like a Podcast RSS Feed or a Chat Room history. Even if you subscribe today, you can download the previous episodes or see the last 50 messages.
+Behavior: Supports multiple subscribers.
+Late Subscribers: They receive the "history" (up to a limit you set) immediately upon subscribing, and then get new live updates.
+Best for: Chat apps, caching the latest state (e.g., "Current Weather").
+
+3. unicast() (The "Private Pipe")
+Think of this like a Phone Call. Only two people are on the line (the emitter and the listener). You cannot just hand the phone to a third person to listen in simultaneously without specialized equipment.
+Behavior: Allows ONLY ONE subscriber.
+Buffering: It is smart. It queues up all data until that one subscriber finally joins. Nothing is lost, but only one person can consume it.
+Best for: Internal message processing where you want to ensure a task is handled exactly once by one consumer.
+
+B.
+

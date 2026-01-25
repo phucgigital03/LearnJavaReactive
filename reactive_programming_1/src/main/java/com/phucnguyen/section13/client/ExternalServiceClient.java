@@ -1,4 +1,18 @@
 package com.phucnguyen.section13.client;
 
-public class ExternalServiceClient {
+import com.phucnguyen.common.AbstractHttpClient;
+import reactor.core.publisher.Mono;
+
+public class ExternalServiceClient extends AbstractHttpClient {
+
+    public Mono<String> getBook(){
+
+        return this.httpClient.get()
+                .uri("/demo07/book")
+                .responseContent()
+                .asString()
+                .startWith(RateLimiter.limitCalls())
+                .contextWrite(UserService.userCategoryContext())
+                .next();
+    }
 }
